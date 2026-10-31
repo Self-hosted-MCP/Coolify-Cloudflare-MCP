@@ -1,0 +1,38 @@
+name: Idea or feature
+description: Suggest something new or different.
+title: "[Idea] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: "Ideas that keep the project simple are the easiest to add. Never paste private data."
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What you're trying to do, and what stops you today.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What should change. A made-up example helps.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Part of the project
+      options:
+        - Tools
+        - Setup
+        - Security or privacy
+        - Languages
+        - Docs
+        - Something else
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Effect on privacy or safety
+      description: Could the change send data somewhere new, or let the AI do more without asking?

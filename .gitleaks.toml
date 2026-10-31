@@ -1,0 +1,7 @@
+# The tests use made-up secret-looking text on purpose, to check that the secret hider catches it.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Fake secrets in tests"
+paths = ["tests/.*"]

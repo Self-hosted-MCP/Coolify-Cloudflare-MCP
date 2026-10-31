@@ -1,0 +1,55 @@
+Coolify-Cloudflare-MCP
+Copyright 2026 Self-hosted-MCP and Coolify-Cloudflare-MCP contributors
+Original project: https://github.com/Self-hosted-MCP/Coolify-Cloudflare-MCP
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not
+use this project except in compliance with the License. You may obtain a copy
+of the License in the file LICENSE or at http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations under
+the License.
+
+Not made by or affiliated with Coolify or Cloudflare. "Coolify" and "Cloudflare"
+are names and trademarks of their owners, used here only to say which products
+this program works with.
+
+
+In plain words
+--------------
+
+You may use, study, change and share this project, also for money, in your
+own products. In return, under the Apache License 2.0:
+
+  - Keep the LICENSE file, this NOTICE file and the copyright lines with every
+    copy you share, and with any changed version.
+  - Mark the files you changed as changed.
+  - The license gives you the authors' patent rights for this project, and ends
+    them for anyone who sues over a patent in it.
+  - The license gives no rights to the project's name (section 6), other than
+    to say truthfully where your version came from.
+
+This summary helps you read the license; it doesn't replace it.
+
+
+Credit
+------
+
+To cite the project, use GitHub's "Cite this repository" button, which reads
+CITATION.cff.
+
+
+Third-party software
+--------------------
+
+No third-party files are included in this repository. The program uses these
+packages, installed separately under their own licenses:
+
+  - mcp (MIT), httpx (BSD-3-Clause), python-multipart (Apache-2.0),
+    PyJWT and cryptography (MIT, Apache-2.0 or BSD), asyncssh (EPL-2.0).
+
+It was designed after studying two other projects, and no code was copied from them:
+the community coolify-mcp by StuMason (MIT) and Cloudflare's own MCP server
+(Apache-2.0).
