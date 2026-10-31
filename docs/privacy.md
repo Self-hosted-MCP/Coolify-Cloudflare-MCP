@@ -34,3 +34,5 @@ One action log: what was asked, tapped, run or refused, with a timestamp in UTC.
 2. Delete its `data` volume.
 3. Delete the Coolify token, both Cloudflare tokens, and the SSH key from the server user.
 4. Remove the connector from your AI app, and the Zero Trust application if you no longer need it.
+
+**What next:** [Safety](safety.md) · [Threat model](threat-model.md)

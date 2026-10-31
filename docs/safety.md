@@ -1,4 +1,16 @@
-# Safety model
+# Safety
+
+For anyone about to let an AI near a real server. You leave knowing the risks in plain words, what the project does about them, and what you should do yourself.
+
+**Contents:** [The risks in plain words](#the-risks-in-plain-words) · [Layers](#layers-outside-in) · [The terminal](#the-terminal-honestly) · [What is not covered](#what-is-not-covered-be-honest) · [What you should do](#what-you-should-do) · [If something goes wrong](#if-something-goes-wrong) · [Found a security problem?](#found-a-security-problem)
+
+## The risks in plain words
+
+- **An AI can be wrong.** It may ask to delete the wrong record or restart the wrong app. The ticket shows what will happen, so you can say no.
+- **An AI can be tricked.** A log line, an app name or a DNS record can contain text that tries to give the AI orders. Everything that comes back is wrapped as data, and the AI is told never to follow it.
+- **A tired tap is the weak point.** One careless Confirm on a bad ticket can take apps offline or open a private page to the public.
+- **The tokens are powerful.** Whoever gets your Coolify or Cloudflare token can use it. They live only in environment variables on your server.
+- **Cloudflare holds the doors.** This tool sits behind the same tunnel it can edit. A wrong tunnel, Access or WAF change can cut off the tool itself, so it cannot undo its own mistake.
 
 What this server can do is small and fenced, and every layer below stands on its own.
 
@@ -56,6 +68,17 @@ What this server can do is small and fenced, and every layer below stands on its
 - **The door and the approval engine live in one process.** A code-execution bug in the public door would bypass consent. Splitting them is a bigger change.
 - **Only partly run against real services.** The read tools, a restart through a Confirm tap, a Deny and Freeze were run against a real Coolify 4.5.3 and a real Cloudflare account. Cloudflare changes (DNS records and routes), the terminal, Docker cleanup and the "keep volumes" behaviour were tested with pretend services only, so check them on a throwaway app and a throwaway host name first (see [setup-own-server.md](setup-own-server.md)). Run `uvx pip-audit` online before deploying.
 
+## What you should do
+
+- Start with a `read` Coolify token and a read-only Cloudflare token. Add more only when you need it.
+- Read every ticket before you tap. Careful tickets are marked red.
+- Keep `CLOUDFLARE_EDIT_TOKEN` narrow: DNS and one tunnel, one zone, nothing else.
+- Test changes on a throwaway app and a throwaway host name first.
+- Leave the terminal off unless you really want a shell on your server.
+- Set `ALLOW_ALL_MINUTES=0` if you never want the Allow all button.
+- Add a Cloudflare rate-limit rule on Claude's door.
+- Keep backups. Coolify can back up its own database.
+
 ## Kill switches (any one is enough)
 
 Freeze on the Confirm page. `READ_ONLY=1` and redeploy. Delete the Coolify API token, the Cloudflare tokens, or the SSH key from the server user. Stop the app in Coolify.
@@ -65,3 +88,17 @@ Freeze on the Confirm page. `READ_ONLY=1` and redeploy. Delete the Coolify API t
 Before release the code had three rounds of independent review by separate AI agents (security and correctness), each followed by fixes with a test for every finding, plus a fourth check of the last round. No human outside the project has audited it. 462 tests pass.
 
 Round 1 found: Zero Trust switch failing open on a typo, Freeze not stopping tapped tickets, a too broad Cloudflare reader, blind env values, forgeable log lines, buttons moving under a tap, unbounded logins, a stuck ticket on cancel, and a regex accepting a new line. Round 2: values cut off on tickets, login limits and redirect hosts, resource kinds, a deploy that queued nothing, late taps, and a log crash on a full disk. Round 3 (terminal and Cloudflare changes): tmux `;` and prefix matching, blind Enter, PUT wiping DNS comments, route edits dropping settings, publishable ports, truncated task commands, and protected hosts being opt-in. [verification.md](verification.md) lists every function and how much of it the tests run.
+
+## If something goes wrong
+
+1. Press **Freeze** on the Confirm page. No change runs after that, and every open ticket is cancelled.
+2. Look at the action log (`ops_log`, or the `actions.log` file in the data folder) to see what was asked, tapped and run.
+3. Look at Cloudflare's audit log for what changed on the Cloudflare side. The Cloudflare dashboard is the way back from a bad tunnel or DNS change.
+4. Roll back a bad deploy from Coolify.
+5. If you think a token leaked, delete it in Coolify or Cloudflare. That alone cuts that part's power.
+
+## Found a security problem?
+
+Please do not open a public issue. Use the private report described in [SECURITY.md](../SECURITY.md).
+
+**What next:** [Threat model](threat-model.md) · [Privacy](privacy.md) · [All the guides](../README.md#all-the-guides)

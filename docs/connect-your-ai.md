@@ -34,3 +34,5 @@ Any app that supports a remote MCP server over streamable HTTP with OAuth should
 ## When a change is asked
 
 Your AI app shows you the ticket text and the Confirm page address. Open the Confirm page, read the ticket, and tap **Confirm** or **Deny**. Then ask the AI to check the result, or wait: it checks with `ops_result`.
+
+**What next:** [Things to ask](examples.md) · [Every tool](tools.md)

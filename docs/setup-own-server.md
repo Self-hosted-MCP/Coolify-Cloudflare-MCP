@@ -4,6 +4,8 @@ Always on, so you can use it from your phone and the Claude website. It runs as 
 
 Do the steps in order and stop if a check fails.
 
+**Contents:** [What you need](#what-you-need) · [Steps 1 to 4](#1-try-it-read-only-on-your-computer-first) · [Deploy with Coolify](#5-deploy-with-coolify) · [Tunnel hostnames](#6-add-the-two-tunnel-hostnames) · [Check it](#7-check-it) · [Add changes](#9-add-changes-only-when-you-want-them) · [Backups](#backups) · [What we tested](#what-we-tested)
+
 ## What you need
 
 - A server with Coolify (4.5 was tested) and its API switched on.
@@ -91,3 +93,5 @@ See [updates.md](updates.md). To stop it, stop the app in Coolify. To remove it,
 | Cloudflare | Zero Trust | Tunnel routes, an Access-protected Confirm page |
 
 Cloudflare changes (DNS records and routes) and the terminal are covered by tests with pretend services, but were not run against a live account in this release.
+
+**What next:** [Connect your AI app](connect-your-ai.md) · [Safety](safety.md) · [Updates](updates.md)

@@ -72,6 +72,14 @@ Ask your AI app: *"Show me the status of the ops tools."* It should report Cooli
 
 Your tokens are in `.env` (never commit it; `.gitignore` already skips it). Login records and the action log are in `./data`.
 
+## Keep it running
+
+The local test stops when you close the terminal. That is fine for a try-out. For always on, use [setup-own-server.md](setup-own-server.md).
+
+## Use it from your phone
+
+Not with this local test. The Claude phone app needs an `https://` address, so use the server setup in [setup-own-server.md](setup-own-server.md). Do not expose the local test to the internet with a tunnel: it runs with Zero Trust off.
+
 ## Update
 
 ```bash
@@ -91,3 +99,5 @@ Delete the folder. If you made tokens, delete them in Coolify and Cloudflare.
 | Linux (CI) | Python 3.11 and 3.14 | The test suite |
 
 Windows is not tested.
+
+**What next:** [Connect your AI app](connect-your-ai.md) · [Setup on your own server](setup-own-server.md)

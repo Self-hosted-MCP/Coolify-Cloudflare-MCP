@@ -1,6 +1,8 @@
 # If something goes wrong
 
-Find what you see, then follow the fix.
+For when something does not work. Find what you see, then follow the fix.
+
+**Contents:** [Starting the server](#starting-the-server) · [Connecting your AI app](#connecting-your-ai-app) · [Logging in](#logging-in) · [The Confirm page](#the-confirm-page) · [Tickets](#tickets) · [Coolify](#coolify) · [Cloudflare](#cloudflare) · [The terminal](#the-terminal) · [Still stuck?](#still-stuck)
 
 ## Starting the server
 
@@ -57,6 +59,42 @@ Find what you see, then follow the fix.
 
 **What you see:** Changes are off for Cloudflare.
 **Fix:** Set `CLOUDFLARE_EDIT_TOKEN` and `CLOUDFLARE_TUNNEL_ID`. Without the edit token only reading works.
+
+## Tickets
+
+**What you see:** The tool answers "Waiting for the owner's tap" and the AI stops.
+**Why:** You have not tapped yet. The tool waits 45 seconds, then hands back the ticket.
+**Fix:** Open the Confirm page, tap **Confirm**, then ask the AI to check the ticket. It uses `ops_result`.
+
+**What you see:** The ticket expired.
+**Why:** A ticket stays open for 5 minutes.
+**Fix:** Ask the AI to make the change again.
+
+**What you see:** "The word you typed does not match."
+**Fix:** Type the word exactly as shown on the ticket, usually the host name.
+
+**What you see:** The result says "result unknown".
+**Why:** The call was cut off while the change was running. It is never retried.
+**Fix:** Check Coolify or Cloudflare to see whether the change happened, then ask again if needed.
+
+**What you see:** "several changes waiting".
+**Fix:** At most 5 tickets can be open. Tap or deny the open ones.
+
+## The terminal
+
+**What you see:** The terminal tools say it is not set up.
+**Fix:** Fill every `SSH_` setting. Leave them all empty to switch it off.
+
+**What you see:** The SSH login is refused or the host is not trusted.
+**Why:** `SSH_KNOWN_HOSTS` pins the server's own key, and a different key is refused.
+**Fix:** Run `ssh-keyscan -t ed25519 your-host`, check the key against the server console, and put the line in `SSH_KNOWN_HOSTS`.
+
+**What you see:** Text arrives wrong or the terminal fails to open.
+**Fix:** `tmux` must be 3.0 or newer on the server (`tmux -V`), and the SSH user's shell must be `sh` or `bash`.
+
+**What you see:** `server_numbers` shows an error for Docker.
+**Why:** The SSH user is not in the `docker` group. That group is as powerful as root, so leaving it out is safer.
+**Fix:** Accept the error, or read [the terminal section of safety.md](safety.md#the-terminal-honestly) before changing it.
 
 ## Still stuck?
 

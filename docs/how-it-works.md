@@ -59,3 +59,5 @@ src/opsmcp/coolify.py      src/opsmcp/cloudflare.py   src/opsmcp/terminal.py
 ```
 
 To change the code, read [AGENTS.md](../AGENTS.md).
+
+**What next:** [Safety](safety.md) · [Every tool](tools.md)

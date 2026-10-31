@@ -30,3 +30,5 @@ Deploy the previous tag the same way. Coolify can also roll back to an earlier i
 ## What an update never touches
 
 Your environment variables in Coolify, and the `data` volume (login records, the action log).
+
+**What next:** [Settings](settings.md) · [Troubleshooting](troubleshooting.md)

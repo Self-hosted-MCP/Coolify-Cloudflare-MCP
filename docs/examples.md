@@ -32,3 +32,5 @@ You talk to your AI app in plain words. It picks the right tool. Prompts in *ita
 
 - *Roll the app back to the earlier image.*
 - *Delete the test DNS record I just made.* (you also type the host name)
+
+**What next:** [Every tool](tools.md) · [Safety](safety.md)

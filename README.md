@@ -174,6 +174,7 @@ This is the safe try-out on your computer, with read-only tokens. For the real t
 | [Every tool](docs/tools.md) | You want to know what the AI can do |
 | [Every setting](docs/settings.md) | You want to change how it behaves |
 | [Safety](docs/safety.md) | Before you let an AI change anything |
+| [Undo and backups](docs/undo-and-backups.md) | You want to take a change back, or back things up |
 | [Threat model](docs/threat-model.md) | You want to know what it protects against, and what not |
 | [Privacy](docs/privacy.md) | You want to know what is kept and where |
 | [How it works](docs/how-it-works.md) | You want to know how it works inside |

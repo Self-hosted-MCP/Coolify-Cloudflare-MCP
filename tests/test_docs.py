@@ -80,6 +80,7 @@ def test_every_tool_is_documented():
     tools = (ROOT / "docs" / "tools.md").read_text("utf-8")
     names = [t.name for t in asyncio.run(server.mcp.list_tools())]
     assert names
+    assert f"The {len(names)} tools" in tools, f"tools.md must say 'The {len(names)} tools'"
     missing = [n for n in names if f"`{n}`" not in tools]
     assert not missing, f"not in docs/tools.md: {missing}"
 

@@ -86,3 +86,5 @@ Leave every `SSH_` line empty to switch the terminal off.
 | `actions.log` | The action log: what was asked, tapped, run or refused. No secret values. |
 | `frozen` | Present while changes are frozen. |
 | OAuth file | Fingerprints of the logins of your AI apps. Never the tokens themselves. |
+
+**What next:** [Setup on your own server](setup-own-server.md) · [Safety](safety.md)

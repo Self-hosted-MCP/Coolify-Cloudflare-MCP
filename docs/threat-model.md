@@ -32,3 +32,5 @@ What Coolify-Cloudflare-MCP protects against, and what it can't, so you can deci
 ## Not audited yet
 
 No one outside the project has audited the code. It had three rounds of review by separate AI agents, and every finding was fixed with a test. The tests also run against pretend services only; see [safety.md](safety.md) for what was and was not tried live.
+
+**What next:** [Safety](safety.md) · [Privacy](privacy.md)
