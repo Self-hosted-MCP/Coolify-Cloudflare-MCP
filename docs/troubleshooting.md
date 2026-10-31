@@ -94,7 +94,7 @@ For when something does not work. Find what you see, then follow the fix.
 
 **What you see:** `server_numbers` shows an error for Docker.
 **Why:** The SSH user is not in the `docker` group. That group is as powerful as root, so leaving it out is safer.
-**Fix:** Accept the error, or read [the terminal section of safety.md](safety.md#the-terminal-honestly) before changing it.
+**Fix:** Accept the error, or read [the terminal section of safety.md](safety.md#the-terminal) before changing it.
 
 ## Still stuck?
 

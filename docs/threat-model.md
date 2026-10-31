@@ -27,7 +27,7 @@ What Coolify-Cloudflare-MCP protects against, and what it can't, so you can deci
 | Secrets in unusual shapes | Hiding is best effort |
 | A code bug in the public door | The door and the approval engine run in one process |
 | Instructions hidden in your data | A known limit of AI models. See [safety.md](safety.md) |
-| The optional terminal | It is a real shell. See [safety.md](safety.md#the-terminal-honestly) |
+| The optional terminal | It is a real shell. See [safety.md](safety.md#the-terminal) |
 
 ## Not audited yet
 

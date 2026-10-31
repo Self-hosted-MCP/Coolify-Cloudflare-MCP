@@ -1,5 +1,7 @@
 <h1 align="center">Coolify-Cloudflare-MCP</h1>
 
+<p align="center"><img src="docs/images/hero.png" alt="Your AI app asks for a change, the server writes a ticket, you tap Confirm on your own page, and the change is done." width="100%"></p>
+
 <p align="center"><b>Let your AI look at your Coolify server and your Cloudflare freely, and change things only after you tap Confirm.<br>Works with Claude and any MCP app. Self-hosted, private, you stay in control.</b></p>
 
 <p align="center">
@@ -49,7 +51,7 @@
 > [!NOTE]
 > Works with [Coolify](https://coolify.io) and [Cloudflare](https://www.cloudflare.com). Not made by or affiliated with Coolify or Cloudflare.
 
-Coolify-Cloudflare-MCP is a small server you run yourself. It gives your AI app two things. First, a free look at everything: your apps, deployments, logs, DNS records, tunnels and rule sets. Second, a way to ask for changes, like a deploy, a restart or a new DNS record. A change never happens because the AI asked. It becomes a **ticket**, and nothing runs until you open your own **Confirm page** and tap **Confirm**.
+Coolify-Cloudflare-MCP is a small server you run yourself. It gives your AI app two things. First, a free look at everything: your apps, deployments, logs, DNS records, tunnels and rule sets. Second, a way to ask for changes, like a deploy, a restart or a new DNS record. Each change becomes a **ticket**, and nothing runs until you open your own **Confirm page** and tap **Confirm**.
 
 This is for people who run apps on their own server with Coolify and keep their domains on Cloudflare, and who want an AI to help check on things from a laptop or a phone without handing it the keys.
 
@@ -64,6 +66,10 @@ AI:  I made ticket T-4821: "Restart app blog". Open your Confirm page and tap Co
 AI:  Done. The blog is running again and the health check is green.
 ```
 
+<p align="center"><img src="docs/images/chat.png" alt="A chat where the AI finds a crashed blog app, makes ticket T-4821 to restart it, you tap Confirm on your phone, and the AI reports the app is healthy again." width="640"></p>
+
+<p align="center"><img src="docs/images/confirm-page.png" alt="The Confirm page on a phone: ticket T-4821, Restart app blog, with the app, the server and the reason shown, and Confirm, Deny and Freeze buttons." width="520"></p>
+
 ## Safety and privacy
 
 > [!WARNING]
@@ -77,22 +83,13 @@ AI:  Done. The blog is running again and the health check is green.
 - **Small, fenced reach.** Cloudflare changes cover only DNS records and one tunnel's routes, only inside one zone, and always with a separate edit token. Coolify cannot delete apps through this tool.
 - **Nothing collected.** No account, no cloud service of ours, no tracking. The only outside calls go to your own Coolify and to Cloudflare's API.
 - **You see everything.** One action log records what was asked, tapped, run or refused, without secret values.
-- **Not a sandbox.** If you switch on the optional terminal, it is a real shell on your server. Read [the honest section](docs/safety.md#the-terminal-honestly).
+- **The terminal is a real shell.** If you switch on the optional terminal, it can do whatever its SSH user can do. Read [the terminal section](docs/safety.md#the-terminal) first.
 
 More in [docs/safety.md](docs/safety.md), [docs/privacy.md](docs/privacy.md) and [docs/threat-model.md](docs/threat-model.md).
 
 ## How it works, in one picture
 
-```
-Your AI app (Claude, ...)
-   │  MCP over HTTPS, passphrase login
-   ▼
-Door 1: Coolify-Cloudflare-MCP (port 8765)  ──►  Coolify API   (apps, logs, deploys)
-   │                                        ──►  Cloudflare API (DNS, tunnels, rule sets)
-   │ a change becomes a ticket              ──►  SSH, optional   (terminal on the server)
-   ▼
-Door 2: Confirm page (port 8766, behind Zero Trust)  ◄──  you, on your phone or computer
-```
+<p align="center"><img src="docs/images/how-it-works.png" alt="Your AI app reaches door 1 of one container. Door 1 reads Coolify and Cloudflare and turns changes into tickets. You reach door 2 behind Cloudflare Zero Trust and tap Confirm." width="720"></p>
 
 More in [docs/how-it-works.md](docs/how-it-works.md).
 

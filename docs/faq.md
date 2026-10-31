@@ -1,6 +1,6 @@
 # Questions people ask
 
-Quick answers, grouped. The first sentence answers; a link goes deeper.
+Quick answers, grouped.
 
 **Contents:** [The basics](#the-basics) · [Your data and safety](#your-data-and-safety) · [Compatibility](#compatibility) · [Running it](#running-it) · [Passwords and keys](#passwords-and-keys) · [Still have a question?](#still-have-a-question)
 
@@ -123,7 +123,7 @@ Not by anyone outside the project. It had three rounds of review by separate AI 
 <details>
 <summary><b>What is the terminal, and is it safe?</b></summary>
 
-An optional shell on your server over SSH, in tmux. It is the strongest tool here, because whatever the SSH user can do, typed text can do. Every keystroke batch is a ticket you read. Leave it off unless you want it. See [safety.md](safety.md#the-terminal-honestly).
+An optional shell on your server over SSH, in tmux. It is the strongest tool here, because whatever the SSH user can do, typed text can do. Every keystroke batch is a ticket you read. Leave it off unless you want it. See [safety.md](safety.md#the-terminal).
 
 </details>
 

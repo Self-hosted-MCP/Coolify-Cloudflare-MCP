@@ -1,6 +1,6 @@
 # Undo and backups
 
-For when you want to know how to take a change back. This tool changes real things, and it has no undo button. You leave knowing what is easy to reverse, what is not, and what to back up.
+For when you want to take a change back. This tool changes real things and has no undo button, so this page says what is easy to reverse, what is not, and what to back up.
 
 **Contents:** [The record of changes](#the-record-of-changes) · [At a glance](#at-a-glance) · [What can't be undone](#what-cant-be-undone) · [Backing up](#backing-up)
 

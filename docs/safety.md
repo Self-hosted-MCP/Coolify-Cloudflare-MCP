@@ -2,7 +2,7 @@
 
 For anyone about to let an AI near a real server. You leave knowing the risks in plain words, what the project does about them, and what you should do yourself.
 
-**Contents:** [The risks in plain words](#the-risks-in-plain-words) · [Layers](#layers-outside-in) · [The terminal](#the-terminal-honestly) · [What is not covered](#what-is-not-covered-be-honest) · [What you should do](#what-you-should-do) · [If something goes wrong](#if-something-goes-wrong) · [Found a security problem?](#found-a-security-problem)
+**Contents:** [The risks in plain words](#the-risks-in-plain-words) · [Layers](#layers-outside-in) · [The terminal](#the-terminal) · [What is not covered](#what-is-not-covered) · [What you should do](#what-you-should-do) · [If something goes wrong](#if-something-goes-wrong) · [Found a security problem?](#found-a-security-problem)
 
 ## The risks in plain words
 
@@ -12,7 +12,7 @@ For anyone about to let an AI near a real server. You leave knowing the risks in
 - **The tokens are powerful.** Whoever gets your Coolify or Cloudflare token can use it. They live only in environment variables on your server.
 - **Cloudflare holds the doors.** This tool sits behind the same tunnel it can edit. A wrong tunnel, Access or WAF change can cut off the tool itself, so it cannot undo its own mistake.
 
-What this server can do is small and fenced, and every layer below stands on its own.
+The server can do only a small, fixed set of things, and each layer below works on its own.
 
 ## Layers (outside in)
 
@@ -46,7 +46,7 @@ What this server can do is small and fenced, and every layer below stands on its
 13. **Logs.** One action log: what was asked, tapped, run or refused. No secret values, no environment values, no typed terminal text (the log says how many characters were typed
     and which warnings applied). Every line passes the secret hider, the file is capped, a full disk never stops a refusal or a Freeze.
 
-## The terminal, honestly
+## The terminal
 
 - It is **a shell on the server**. Whatever the SSH user can do, typed text can do. To read Docker numbers that user needs the `docker` group, which is **as powerful as root**.
   The warning list on tickets (rm, curl | sh, docker run, sudo...) helps the owner read; it is a hint, never a guarantee, and the ticket says so every time.
@@ -56,7 +56,7 @@ What this server can do is small and fenced, and every layer below stands on its
 - The server's own SSH public key is pinned: nothing is trusted on first use. The key lives only in Coolify's environment.
 - Better, not built: a separate Unix user with no `docker` group plus a small docker-socket-proxy or sudoers rules for the five fixed number checks.
 
-## What is NOT covered (be honest)
+## What is not covered
 
 - **Secret hiding is best effort.** It catches common shapes and names. A secret in an unusual shape, inside a log line or on a screen, could get through. Use a `read` Coolify token until `read:sensitive` is really needed.
 - **The owner's tap is the last guard.** A ticket is only as safe as the reading of it. Careful tickets are marked red.

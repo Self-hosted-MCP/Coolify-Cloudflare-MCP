@@ -1,6 +1,6 @@
 # Security policy
 
-Coolify-Cloudflare-MCP holds API tokens for your Coolify and Cloudflare, an optional SSH key for your server, and a passphrase hash, and it can change those systems after you tap Confirm. Security reports are very welcome.
+Coolify-Cloudflare-MCP holds API tokens for your Coolify and Cloudflare, an optional SSH key for your server, and a passphrase hash, and it can change those systems after you tap Confirm.
 
 Works with Coolify and Cloudflare. Not made by or affiliated with them. Problems in Coolify or Cloudflare themselves go to those projects.
 

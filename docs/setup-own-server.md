@@ -63,7 +63,7 @@ Press **Allow a new app** on the Confirm page, then add the connector. See [conn
 
 - **Deploy and restart:** make a Coolify token with `deploy` (add `write` only for settings and variables). Never use `root`. Add `read:sensitive` only if you need app logs.
 - **Cloudflare changes:** make a second token with DNS Edit for your domain and Cloudflare Tunnel Edit for the account, nothing else. Put it in `CLOUDFLARE_EDIT_TOKEN`, then set `CLOUDFLARE_ZONE_NAME` and `CLOUDFLARE_TUNNEL_ID`. Test on a throwaway host name first. A bad change to a protected host can cut off your own access; the Cloudflare audit log shows what changed and the dashboard is the way back.
-- **Terminal:** only if you really want a shell on your server. Make a NEW user (not root, not you), install `tmux` 3.0 or newer, make an SSH key just for it, and fill the `SSH_` settings with the server's own public key line in `SSH_KNOWN_HOSTS`. The `server_numbers` check needs the `docker` group, and that group is as powerful as root. Read [the terminal section of safety.md](safety.md#the-terminal-honestly) first.
+- **Terminal:** only if you really want a shell on your server. Make a NEW user (not root, not you), install `tmux` 3.0 or newer, make an SSH key just for it, and fill the `SSH_` settings with the server's own public key line in `SSH_KNOWN_HOSTS`. The `server_numbers` check needs the `docker` group, and that group is as powerful as root. Read [the terminal section of safety.md](safety.md#the-terminal) first.
 
 Then set `READ_ONLY=0` and redeploy. The server still starts frozen: unfreeze on the Confirm page when you want changes.
 

@@ -1,8 +1,10 @@
 # How it works
 
-For when you want to know what happens inside, in plain words.
+For when you want to know what happens inside.
 
 ## The pieces
+
+<p align="center"><img src="images/how-it-works.png" alt="Your AI app reaches door 1 of one container. Door 1 reads Coolify and Cloudflare and turns changes into tickets. You reach door 2 behind Cloudflare Zero Trust and tap Confirm." width="720"></p>
 
 - **Your AI app.** Asks questions and asks for changes.
 - **Door 1 (port 8765).** The MCP server. It answers read questions and turns change requests into tickets. Public, with a passphrase login.

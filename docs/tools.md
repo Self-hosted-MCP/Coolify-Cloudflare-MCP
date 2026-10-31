@@ -1,6 +1,6 @@
 # The 40 tools
 
-For people who want to know exactly what the AI can do. You leave knowing which tools only look, which ask for a tap, and what they refuse. Table of the 40 tools below; the count is checked by a test.
+For people who want to know exactly what the AI can do: which tools only look, which ask for a tap, and what they refuse. The count of 40 is checked by a test.
 
 **Contents:** [Looking](#looking-free-nothing-changes) · [Changing](#changing-each-makes-a-ticket-that-needs-the-owners-tap) · [Not built](#not-built) · [When a tool says no](#when-a-tool-says-no) · [Limits](#limits) · [Asking first](#asking-first)
 
