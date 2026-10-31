@@ -1,0 +1,20 @@
+name: Question
+description: Ask how to do something.
+title: "[Question] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The [FAQ](https://github.com/Self-hosted-MCP/Coolify-Cloudflare-MCP/blob/main/docs/faq.md) and the [setup guides](https://github.com/Self-hosted-MCP/Coolify-Cloudflare-MCP#all-the-guides) may already answer it.
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: Please don't include passwords, keys or private data.
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried or read so far?

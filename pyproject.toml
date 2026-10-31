@@ -1,0 +1,38 @@
+[project]
+name = "coolify-cloudflare-mcp"
+version = "0.1.0"
+description = "Look at Coolify and Cloudflare freely, change things only after a tap on a Confirm page."
+requires-python = ">=3.11"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+keywords = ["mcp", "coolify", "cloudflare", "self-hosted"]
+dependencies = [
+    "mcp>=2.3,<3",
+    "httpx>=0.27",
+    "python-multipart>=0.0.20",
+    "PyJWT[crypto]>=2.9",
+    "asyncssh>=2.17",
+]
+
+[project.urls]
+Homepage = "https://github.com/Self-hosted-MCP/Coolify-Cloudflare-MCP"
+Issues = "https://github.com/Self-hosted-MCP/Coolify-Cloudflare-MCP/issues"
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-asyncio>=0.24"]
+
+[project.scripts]
+coolify-cloudflare-mcp = "opsmcp.server:main"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/opsmcp"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["src"]
